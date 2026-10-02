@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NotCRM.Application\NotCRM.Application.csproj" />
+    <ProjectReference Include="..\NotCRM.Domain\NotCRM.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

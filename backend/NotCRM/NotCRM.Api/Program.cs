@@ -1,4 +1,13 @@
+using NotCRM.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString =
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException(
+        "Connection string 'DefaultConnection' was not found.");
+
+builder.Services.AddInfrastructure(connectionString);
 
 // Add services to the container.
 

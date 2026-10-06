@@ -1,4 +1,5 @@
 using NotCRM.Infrastructure;
+using NotCRM.Application.Businesses;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var connectionString =
         "Connection string 'DefaultConnection' was not found.");
 
 builder.Services.AddInfrastructure(connectionString);
+builder.Services.AddScoped<BusinessService>();
 
 // Add services to the container.
 

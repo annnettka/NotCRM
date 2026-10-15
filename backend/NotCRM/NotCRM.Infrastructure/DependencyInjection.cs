@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using NotCRM.Infrastructure.Persistence;
 using NotCRM.Application.Common.Interfaces;
+using NotCRM.Infrastructure.Persistence;
 using NotCRM.Infrastructure.Persistence.Repositories;
 
 namespace NotCRM.Infrastructure;
@@ -15,8 +15,9 @@ public static class DependencyInjection
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(connectionString));
 
-                //ЦЕЙ рядок означає якщо хтось попросить IBusinessRepository, дай йому BusinessRepository
-                services.AddScoped<IBusinessRepository, BusinessRepository>();
+        services.AddScoped<IBusinessRepository, BusinessRepository>();
+
+        services.AddScoped<ICustomerRepository,CustomerRepository>();
 
         return services;
     }
